@@ -8,7 +8,8 @@ resource "null_resource" "test" {
   connection {
     user = "root"
     private_key = file("/root/.ssh/id_rsa")
-    host = "52.90.105.206"
+    
+    host = "${var.remote_host}"
     timeout = "3m"
   }
 
