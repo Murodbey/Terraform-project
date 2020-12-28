@@ -218,9 +218,9 @@ gremlin:
 
     ## Certificate auth requires: `certificate` and `key`
     # team certificate (e.g. -----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----)
-    certificate: ${cert}
+    certificate:
     # team private key (e.g. -----BEGIN EC PRIVATE KEY-----...-----END EC PRIVATE KEY-----)
-    key: ${private_key}
+    key: 
 
     ## Secret auth requires: `teamSecret`
     # team secret (e.g. 00000000-0000-0000-0000-000000000000)
