@@ -212,9 +212,9 @@ gremlin:
     type: certificate
     managed: true
     # team identifier (e.g. 11111111-1111-1111-1111-111111111111)
-    teamID: ${team_id}
+    teamID:
     # string uniquely identifying this kubernetes cluster in Gremlin (e.g. my-cluster)
-    clusterID: ${cluster_id}
+    clusterID:
 
     ## Certificate auth requires: `certificate` and `key`
     # team certificate (e.g. -----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----)
@@ -224,4 +224,4 @@ gremlin:
 
     ## Secret auth requires: `teamSecret`
     # team secret (e.g. 00000000-0000-0000-0000-000000000000)
-    teamSecret: ${team_secret}
+    teamSecret:
