@@ -1,12 +1,29 @@
 provider "aws" {
   region = var.aws_region
 }
+
+data "aws_ami" "centos" {
+  most_recent = true
+  owners      = ["679593333241"]
+
+  filter {
+    name   = "state"
+    values = ["available"]
+  }
+
+  filter {
+    name   = "name"
+    values = ["CentOS Linux 7 x86_64 HVM EBS *"]
+  }
+}
+
+
 //--------------------------------------------------------------------
 // Master Key Encryption Provider instance
 //    This node does not participate in the HA clustering
 
 resource "aws_instance" "vault-transit" {
-  ami                         = var.ami_id
+  ami                         = data.aws_ami.centos.id
   instance_type               = var.instance_type
   subnet_id                   = module.vault_demo_vpc.public_subnets[0]
   key_name                    = var.key_name
@@ -37,7 +54,7 @@ resource "aws_instance" "vault-transit" {
 
 resource "aws_instance" "vault-server" {
   count                       = length(var.vault_server_names)
-  ami                         = var.ami_id
+  ami                         = data.aws_ami.centos.id
   instance_type               = var.instance_type
   subnet_id                   = module.vault_demo_vpc.public_subnets[0]
   key_name                    = var.key_name
