@@ -2,14 +2,13 @@ resource "aws_instance" "nginx" {
 
 depends_on = [
     aws_key_pair.nginx_key,
-    aws_security_group.nginx_sg
   ]
 
   ami                         = var.ami_id
   instance_type               = var.instance_type
   subnet_id                   = var.subnet_id
   key_name                    = var.key_name
-  security_groups             = ["dev_nginx_sg"]
+  security_groups             = aws_security_group.nginx_sg.name
   associate_public_ip_address = true
 
 provisioner "remote-exec"{
