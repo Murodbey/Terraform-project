@@ -8,7 +8,7 @@ depends_on = [
   instance_type               = var.instance_type
   subnet_id                   = var.subnet_id
   key_name                    = var.key_name
-  security_groups             = "dev-nginx_sg"
+  security_groups             = ["dev-nginx_sg"]
   associate_public_ip_address = true
 
 provisioner "remote-exec"{
