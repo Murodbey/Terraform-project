@@ -5,6 +5,7 @@ variable "aws_region" {}
 # SSH key name to access EC2 instances (should already exist) in the AWS Region
 variable "ssh_key_location" {}
 variable "ami_id" {}
+variable "key_name" {}
 variable "tags" {
   type = map(any)
 }

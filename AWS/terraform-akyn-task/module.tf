@@ -7,4 +7,5 @@ module "vault" {
   source                   = "./module"
   vpc_id                   = var.vpc_id
   tags                     = var.tags
+  key_name                 = var.key_name
 }
