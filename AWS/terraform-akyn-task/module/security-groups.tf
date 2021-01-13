@@ -1,5 +1,5 @@
 resource "aws_security_group" "nginx_sg" {
-  name        = "${var.environment_name}-nginx_sg"
+  name        = "dev-nginx_sg"
   description = "SSH and Internal Traffic"
   vpc_id      = var.vpc_id
   tags        = var.tags
