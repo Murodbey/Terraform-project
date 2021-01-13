@@ -25,8 +25,8 @@ provisioner "remote-exec"{
     "sudo service docker start",
     "sudo usermod -a -G docker ec2-user",
     "sudo systemctl enable docker",
-    "docker run --name docker-nginx -p 80:80 nginx",
-    "docker ps"
+    "sudo docker run --name docker-nginx -p 80:80 nginx",
+    "sudo docker ps"
   ]
  }
  tags ={
