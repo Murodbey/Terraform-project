@@ -3,7 +3,6 @@ variable "aws_region" {}
 
 
 # SSH key name to access EC2 instances (should already exist) in the AWS Region
-variable "key_name" {}
 variable "ssh_key_location" {}
 variable "ami_id" {}
 variable "tags" {
