@@ -1,3 +1,3 @@
 output "pubip"{
- value=aws_instance.nginx.public_ip
+ value=module.aws_instance.nginx.public_ip
 }
